@@ -5,13 +5,14 @@ import 'include/style/index.css'
 import App from 'include/components/App';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+// Find the root element
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+
+// User root to render the reate Application (App)
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+	<React.StrictMode>
+		<App />
+	</React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

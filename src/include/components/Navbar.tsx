@@ -64,7 +64,7 @@ function NavBar ()
 				{navItems}
 			</ul>
 		</nav>
-	);
+		);
 }
 
 export default NavBar;
