@@ -22,6 +22,12 @@ code
   height: 120px;
 }
 
+.footer-logo
+{
+	height: 60px;
+	margin: 10px 0;
+}
+
 a 
 {
   color: #84f2f6;
@@ -33,4 +39,35 @@ a:hover
 {
   color: #3deaf1;
   text-decoration: underline
+}
+
+.footer
+{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: rgb(230, 230, 230);
+	color: rgb(100, 100, 100);
+	text-align: left;
+	padding: 20px 40px 5px 40px;
+}
+
+.footer a 
+{
+  color: #5da7aa;
+  text-decoration: none;
+  background-color: transparent
+}
+
+.footer a:hover
+{
+  color: #5da7aa;
+  text-decoration: underline
+}
+
+.mls-disclaimer
+{
+    margin: 8px 0;
+    font-size: .75em;
 }

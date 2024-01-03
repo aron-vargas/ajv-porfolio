@@ -1,7 +1,181 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="1" failures="0" errors="0" time="2.384">
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2023-12-29T21:28:16" time="1.332" tests="1">
-    <testcase classname=" renders learn react link" name=" renders learn react link" time="0.037">
+<testsuites name="jest tests" tests="1" failures="1" errors="0" time="4.303">
+  <testsuite name="undefined" errors="0" failures="1" skipped="0" timestamp="2024-01-02T20:19:32" time="2.525" tests="1">
+    <testcase classname=" renders learn react link" name=" renders learn react link" time="0.169">
+      <failure>TestingLibraryElementError: Unable to find an element with the text: /learn react/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+&lt;body&gt;
+  &lt;div&gt;
+    &lt;div
+      class=&quot;App&quot;
+    &gt;
+      &lt;nav
+        class=&quot;navbar navbar-default navbar-expand-sm bg-light navbar-light&quot;
+      &gt;
+        &lt;a
+          class=&quot;navbar-brand&quot;
+        &gt;
+          &lt;img
+            alt=&quot;Nevada Prime Logo&quot;
+            class=&quot;top-logo&quot;
+            src=&quot;NVPrimeLogo.png&quot;
+          /&gt;
+        &lt;/a&gt;
+        &lt;ul
+          class=&quot;navbar-nav&quot;
+        &gt;
+          &lt;li
+            class=&quot;nav-item&quot;
+            id=&quot;home&quot;
+          &gt;
+            &lt;a
+              class=&quot;nav-link&quot;
+            &gt;
+              Home
+            &lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li
+            class=&quot;nav-item&quot;
+            id=&quot;buy&quot;
+          &gt;
+            &lt;a
+              class=&quot;nav-link&quot;
+            &gt;
+              Buy
+            &lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li
+            class=&quot;nav-item&quot;
+            id=&quot;sell&quot;
+          &gt;
+            &lt;a
+              class=&quot;nav-link&quot;
+            &gt;
+              Sell
+            &lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li
+            class=&quot;nav-item&quot;
+            id=&quot;rent&quot;
+          &gt;
+            &lt;a
+              class=&quot;nav-link&quot;
+            &gt;
+              Rent
+            &lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li
+            class=&quot;nav-item&quot;
+            id=&quot;community&quot;
+          &gt;
+            &lt;a
+              class=&quot;nav-link&quot;
+            &gt;
+              Community
+            &lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li
+            class=&quot;nav-item&quot;
+            id=&quot;resources&quot;
+          &gt;
+            &lt;a
+              class=&quot;nav-link&quot;
+            &gt;
+              Resources
+            &lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li
+            class=&quot;nav-item&quot;
+            id=&quot;about&quot;
+          &gt;
+            &lt;a
+              class=&quot;nav-link&quot;
+            &gt;
+              About
+            &lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li
+            class=&quot;nav-item&quot;
+            id=&quot;contactus&quot;
+          &gt;
+            &lt;a
+              class=&quot;nav-link&quot;
+            &gt;
+              Conact Us
+            &lt;/a&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/nav&gt;
+      &lt;ul
+        class=&quot;nav flex-column&quot;
+      &gt;
+        &lt;li
+          class=&quot;nav-item&quot;
+        &gt;
+          &lt;a
+            class=&quot;nav-link&quot;
+            href=&quot;#&quot;
+          &gt;
+            Link1
+          &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li
+          class=&quot;nav-item&quot;
+        &gt;
+          &lt;a
+            class=&quot;nav-link&quot;
+            href=&quot;#&quot;
+          &gt;
+            Link2
+          &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li
+          class=&quot;nav-item&quot;
+        &gt;
+          &lt;a
+            class=&quot;nav-link&quot;
+            href=&quot;#&quot;
+          &gt;
+            Link3
+          &lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;div
+        class=&quot;main-cont&quot;
+      &gt;
+        The real stuff
+      &lt;/div&gt;
+      &lt;div
+        class=&quot;footer&quot;
+      &gt;
+        My foot
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+    at Object.getElementError (/projects/spa-app/node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/config.js:37:19)
+    at /projects/spa-app/node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+    at /projects/spa-app/node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+    at getByText (/projects/spa-app/node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:95:19)
+    at Object.&lt;anonymous&gt; (/projects/spa-app/src/include/components/App.test.tsx:7:30)
+    at Promise.then.completed (/projects/spa-app/node_modules/jest-circus/build/utils.js:391:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/projects/spa-app/node_modules/jest-circus/build/utils.js:316:10)
+    at _callCircusTest (/projects/spa-app/node_modules/jest-circus/build/run.js:218:40)
+    at _runTest (/projects/spa-app/node_modules/jest-circus/build/run.js:155:3)
+    at _runTestsForDescribeBlock (/projects/spa-app/node_modules/jest-circus/build/run.js:66:9)
+    at run (/projects/spa-app/node_modules/jest-circus/build/run.js:25:3)
+    at runAndTransformResultsToJestFormat (/projects/spa-app/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:170:21)
+    at jestAdapter (/projects/spa-app/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:82:19)
+    at runTestInternal (/projects/spa-app/node_modules/jest-runner/build/runTest.js:389:16)
+    at runTest (/projects/spa-app/node_modules/jest-runner/build/runTest.js:475:34)
+    at TestRunner.runTests (/projects/spa-app/node_modules/jest-runner/build/index.js:101:12)
+    at TestScheduler.scheduleTests (/projects/spa-app/node_modules/@jest/core/build/TestScheduler.js:333:13)
+    at runJest (/projects/spa-app/node_modules/@jest/core/build/runJest.js:404:19)
+    at _run10000 (/projects/spa-app/node_modules/@jest/core/build/cli/index.js:320:7)
+    at runCLI (/projects/spa-app/node_modules/@jest/core/build/cli/index.js:173:3)
+    at Object.run (/projects/spa-app/node_modules/jest-cli/build/cli/index.js:155:37)</failure>
     </testcase>
   </testsuite>
 </testsuites>

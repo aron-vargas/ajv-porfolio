@@ -1,23 +1,35 @@
 import React from 'react';
 
-class LeftNav extends React.Component
+const LeftNav = () =>
 {
-	render()
-	{
-		return (
-			<ul className="nav flex-column">
-				<li className="nav-item">
-					<a className="nav-link" href="#">Link1</a>
-				</li>
-				<li className="nav-item">
-					<a className="nav-link" href="#">Link2</a>
-				</li>
-				<li className="nav-item">
-					<a className="nav-link" href="#">Link3</a>
-				</li>
-			</ul>
-		);
-	}
+	const menu = [
+		{
+			id: "l1",
+			text: "Link1",
+			url: "#l1"
+		},
+		{
+			id: "l2",
+			text: "Link 2",
+			url: "#l2"
+		},
+		{
+			id: "l3",
+			text: "Link-3",
+			url: "#l3"
+		},
+	];
+
+	
+	return (
+		<ul className="nav flex-column">
+			{menu.map ((item) => {
+				return (<li id={"li-"+item.id} key={"li-"+item.id} className="nav-item">
+					<a id={"atag-"+item.id} className="nav-link" href={item.url}>{item.text}</a>
+				</li>)
+			})}
+		</ul>
+	);
 }
 
 export default LeftNav;
