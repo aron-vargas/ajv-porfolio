@@ -17,11 +17,24 @@ code
     monospace;
 }
 
+#top-navbar
+{
+	transition: background-color .2s ease,min-height .2s ease;
+}
 .top-logo
 {
   height: 120px;
 }
-
+.navbar-nav
+{
+	width: inherit;
+	flex-grow: 1;
+}
+.nav-buttons
+{
+	text-align: right !important;
+	margin-right: 20px;
+}
 .footer-logo
 {
 	height: 60px;
@@ -41,11 +54,12 @@ a:hover
   text-decoration: underline
 }
 
+.text-right { text-align: right !important; }
+.text-center { text-align: center !important; }
+.text-left { text-align: left !important; }
+
 .footer
 {
-	position: fixed;
-	left: 0;
-	bottom: 0;
 	width: 100%;
 	background-color: rgb(230, 230, 230);
 	color: rgb(100, 100, 100);

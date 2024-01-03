@@ -56,7 +56,7 @@ function Footer ()
 			<div>
 				<p id="FooterLinks" style={{textAlign: "center"}}>
 					<a className="footer-link" href="/-/Home/privacy/"><span>Privacy Policy</span></a>
-					| 
+					&nbsp;|&nbsp;
 					<a className="footer-link" href="/-/Home/dmca/"><span>DMCA</span></a>
 				</p>
 			</div>

@@ -10,7 +10,7 @@ import Footer from 'include/components/Footer';
 // Main class for the webpage content
 class App extends React.Component
 {
-	constructor(props)
+	constructor(props: any)
 	{
 		super(props);
 		this.state =
