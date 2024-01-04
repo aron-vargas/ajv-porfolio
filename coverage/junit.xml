@@ -1,164 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="1" failures="1" errors="0" time="4.303">
-  <testsuite name="undefined" errors="0" failures="1" skipped="0" timestamp="2024-01-02T20:19:32" time="2.525" tests="1">
-    <testcase classname=" renders learn react link" name=" renders learn react link" time="0.169">
-      <failure>TestingLibraryElementError: Unable to find an element with the text: /learn react/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
-
-Ignored nodes: comments, script, style
-&lt;body&gt;
-  &lt;div&gt;
-    &lt;div
-      class=&quot;App&quot;
-    &gt;
-      &lt;nav
-        class=&quot;navbar navbar-default navbar-expand-sm bg-light navbar-light&quot;
-      &gt;
-        &lt;a
-          class=&quot;navbar-brand&quot;
-        &gt;
-          &lt;img
-            alt=&quot;Nevada Prime Logo&quot;
-            class=&quot;top-logo&quot;
-            src=&quot;NVPrimeLogo.png&quot;
-          /&gt;
-        &lt;/a&gt;
-        &lt;ul
-          class=&quot;navbar-nav&quot;
-        &gt;
-          &lt;li
-            class=&quot;nav-item&quot;
-            id=&quot;home&quot;
-          &gt;
-            &lt;a
-              class=&quot;nav-link&quot;
-            &gt;
-              Home
-            &lt;/a&gt;
-          &lt;/li&gt;
-          &lt;li
-            class=&quot;nav-item&quot;
-            id=&quot;buy&quot;
-          &gt;
-            &lt;a
-              class=&quot;nav-link&quot;
-            &gt;
-              Buy
-            &lt;/a&gt;
-          &lt;/li&gt;
-          &lt;li
-            class=&quot;nav-item&quot;
-            id=&quot;sell&quot;
-          &gt;
-            &lt;a
-              class=&quot;nav-link&quot;
-            &gt;
-              Sell
-            &lt;/a&gt;
-          &lt;/li&gt;
-          &lt;li
-            class=&quot;nav-item&quot;
-            id=&quot;rent&quot;
-          &gt;
-            &lt;a
-              class=&quot;nav-link&quot;
-            &gt;
-              Rent
-            &lt;/a&gt;
-          &lt;/li&gt;
-          &lt;li
-            class=&quot;nav-item&quot;
-            id=&quot;community&quot;
-          &gt;
-            &lt;a
-              class=&quot;nav-link&quot;
-            &gt;
-              Community
-            &lt;/a&gt;
-          &lt;/li&gt;
-          &lt;li
-            class=&quot;nav-item&quot;
-            id=&quot;resources&quot;
-          &gt;
-            &lt;a
-              class=&quot;nav-link&quot;
-            &gt;
-              Resources
-            &lt;/a&gt;
-          &lt;/li&gt;
-          &lt;li
-            class=&quot;nav-item&quot;
-            id=&quot;about&quot;
-          &gt;
-            &lt;a
-              class=&quot;nav-link&quot;
-            &gt;
-              About
-            &lt;/a&gt;
-          &lt;/li&gt;
-          &lt;li
-            class=&quot;nav-item&quot;
-            id=&quot;contactus&quot;
-          &gt;
-            &lt;a
-              class=&quot;nav-link&quot;
-            &gt;
-              Conact Us
-            &lt;/a&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/nav&gt;
-      &lt;ul
-        class=&quot;nav flex-column&quot;
-      &gt;
-        &lt;li
-          class=&quot;nav-item&quot;
-        &gt;
-          &lt;a
-            class=&quot;nav-link&quot;
-            href=&quot;#&quot;
-          &gt;
-            Link1
-          &lt;/a&gt;
-        &lt;/li&gt;
-        &lt;li
-          class=&quot;nav-item&quot;
-        &gt;
-          &lt;a
-            class=&quot;nav-link&quot;
-            href=&quot;#&quot;
-          &gt;
-            Link2
-          &lt;/a&gt;
-        &lt;/li&gt;
-        &lt;li
-          class=&quot;nav-item&quot;
-        &gt;
-          &lt;a
-            class=&quot;nav-link&quot;
-            href=&quot;#&quot;
-          &gt;
-            Link3
-          &lt;/a&gt;
-        &lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;div
-        class=&quot;main-cont&quot;
-      &gt;
-        The real stuff
-      &lt;/div&gt;
-      &lt;div
-        class=&quot;footer&quot;
-      &gt;
-        My foot
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/body&gt;
-    at Object.getElementError (/projects/spa-app/node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/config.js:37:19)
-    at /projects/spa-app/node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
-    at /projects/spa-app/node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
-    at getByText (/projects/spa-app/node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:95:19)
-    at Object.&lt;anonymous&gt; (/projects/spa-app/src/include/components/App.test.tsx:7:30)
+<testsuites name="jest tests" tests="1" failures="1" errors="0" time="6.379">
+  <testsuite name="undefined" errors="0" failures="1" skipped="0" timestamp="2024-01-04T18:27:04" time="3.119" tests="1">
+    <testcase classname=" renders learn react link" name=" renders learn react link" time="0.296">
+      <failure>Error: useRoutes() may be used only in the context of a &lt;Router&gt; component.
+    at Object.invariant [as UNSAFE_invariant] (/projects/spa-app/node_modules/@remix-run/router/history.ts:494:11)
+    at useRoutesImpl (/projects/spa-app/node_modules/react-router/lib/hooks.tsx:353:3)
+    at useRoutes (/projects/spa-app/node_modules/react-router/lib/hooks.tsx:343:10)
+    at App (/projects/spa-app/src/include/components/App.tsx:64:26)
+    at renderWithHooks (/projects/spa-app/node_modules/react-dom/cjs/react-dom.development.js:16305:18)
+    at mountIndeterminateComponent (/projects/spa-app/node_modules/react-dom/cjs/react-dom.development.js:20074:13)
+    at beginWork (/projects/spa-app/node_modules/react-dom/cjs/react-dom.development.js:21587:16)
+    at beginWork$1 (/projects/spa-app/node_modules/react-dom/cjs/react-dom.development.js:27426:14)
+    at performUnitOfWork (/projects/spa-app/node_modules/react-dom/cjs/react-dom.development.js:26560:12)
+    at workLoopSync (/projects/spa-app/node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+    at renderRootSync (/projects/spa-app/node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+    at recoverFromConcurrentError (/projects/spa-app/node_modules/react-dom/cjs/react-dom.development.js:25850:20)
+    at performConcurrentWorkOnRoot (/projects/spa-app/node_modules/react-dom/cjs/react-dom.development.js:25750:22)
+    at flushActQueue (/projects/spa-app/node_modules/react/cjs/react.development.js:2667:24)
+    at act (/projects/spa-app/node_modules/react/cjs/react.development.js:2582:11)
+    at /projects/spa-app/node_modules/@testing-library/react/dist/act-compat.js:63:25
+    at renderRoot (/projects/spa-app/node_modules/@testing-library/react/dist/pure.js:159:26)
+    at render (/projects/spa-app/node_modules/@testing-library/react/dist/pure.js:246:10)
+    at Object.&lt;anonymous&gt; (/projects/spa-app/src/include/components/App.test.tsx:6:9)
     at Promise.then.completed (/projects/spa-app/node_modules/jest-circus/build/utils.js:391:28)
     at new Promise (&lt;anonymous&gt;)
     at callAsyncCircusFn (/projects/spa-app/node_modules/jest-circus/build/utils.js:316:10)

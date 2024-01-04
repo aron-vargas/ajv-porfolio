@@ -41,7 +41,7 @@ code
 	margin: 10px 0;
 }
 
-a 
+a
 {
   color: #84f2f6;
   text-decoration: none;
@@ -58,6 +58,29 @@ a:hover
 .text-center { text-align: center !important; }
 .text-left { text-align: left !important; }
 
+.nomatch
+{
+    width: 100%;
+    height: 800px;
+    background-image: url('images/medow.png');
+}
+
+.nomatch .msg
+{
+    position: absolute;
+    top: 200px;
+    margin: 0 auto;
+    padding: 30px;
+    width: 300px;
+    border: 2px solid #CCC;
+    border-radius: 3px;
+    background-color: white;
+}
+.nomatch .fa-warning
+{
+    font-size: 24pt;
+}
+
 .footer
 {
 	width: 100%;
@@ -67,7 +90,7 @@ a:hover
 	padding: 20px 40px 5px 40px;
 }
 
-.footer a 
+.footer a
 {
   color: #5da7aa;
   text-decoration: none;

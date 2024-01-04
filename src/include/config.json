@@ -1,0 +1,32 @@
+{
+	"name": "freedom",
+	"theme": "default",
+	"applications" :
+	[
+		{
+			"id": "home-page",
+			"name": "Home",
+            "ComponentFile" : "include/components/home.tsx"
+        },
+        {
+			"id": "buy-page",
+			"name": "Buy",
+            "ComponentFile" : "include/components/home.tsx"
+        },
+        {
+			"id": "sell-page",
+			"name": "Sell",
+            "ComponentFile" : "include/components/home.tsx"
+        },
+        {
+			"id": "rent-page",
+			"name": "Rent",
+            "ComponentFile" : "include/components/home.tsx"
+        },
+        {
+			"id": "calendar-page",
+			"name": "Calendar",
+            "ComponentFile" : "include/components/calendar.tsx"
+        }
+	]
+}
