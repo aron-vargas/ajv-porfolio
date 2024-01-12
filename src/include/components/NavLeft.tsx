@@ -14,21 +14,21 @@ const defaultMenu = [
     {
         id: "l1",
         text: "Link1",
-        url: "#l1"
+        href: "#l1"
     },
     {
         id: "l2",
         text: "Link 2",
-        url: "#l2"
+        href: "#l2"
     },
     {
         id: "l3",
         text: "Link-3",
-        url: "#l3"
+        href: "#l3"
     },
 ];
 
-const LeftNav = (propMenu: [LeftNavType]) =>
+const LeftNav = ({propMenu}) =>
 {
     // Use default if missing
     let menu = (propMenu.length) ? propMenu : defaultMenu;

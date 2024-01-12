@@ -1,0 +1,15 @@
+.cal .MainLayout-header .MainLayout-background
+{
+    background-color: #f3f7fc;
+}
+.cal .Cell-cell .Cell-text
+{
+    padding: 0;
+    margin: 0;
+    width: 1.72em;
+    height: 1.72em;
+}
+.cal .Cell-cell .Cell-today
+{
+    margin: 0;
+}

@@ -6,27 +6,66 @@
 		{
 			"id": "home-page",
 			"name": "Home",
-            "ComponentFile" : "include/components/home.tsx"
+            "path": "/home",
+            "to": "/home",
+            "children": [
+                {
+                    "id": "index-page",
+                    "name": "Welcome",
+                    "href": "/home",
+                    "isIndex": true,
+                    "elementName": "main"
+                },
+                {
+                    "id": "junk-page",
+                    "name": "Junk",
+                    "to": "/home/junk",
+                    "path": "junk",
+                    "elementName": "main"
+                },
+                {
+                    "id": "general",
+                    "name": "General",
+                    "path": "general",
+                    "to": "/home/general",
+                    "elementName": "main"
+                },
+                {
+                    "id": "home-calendar",
+                    "name": "Calendar",
+                    "path": "calendar",
+                    "to": "/home/calendar",
+                    "componentFile" : "./pages/Calendar"
+                }
+            ]
         },
         {
 			"id": "buy-page",
 			"name": "Buy",
-            "ComponentFile" : "include/components/home.tsx"
+            "path": "/buy",
+            "to": "/buy",
+            "componentFile" : "./pages/Buy"
         },
         {
 			"id": "sell-page",
 			"name": "Sell",
-            "ComponentFile" : "include/components/home.tsx"
+            "path": "/sell",
+            "to": "/sell",
+            "componentFile" : "./pages/Sell"
         },
         {
 			"id": "rent-page",
 			"name": "Rent",
-            "ComponentFile" : "include/components/home.tsx"
+            "path": "rent",
+            "to": "rent",
+            "componentFile" : "./pages/Rent"
         },
         {
-			"id": "calendar-page",
-			"name": "Calendar",
-            "ComponentFile" : "include/components/calendar.tsx"
+			"id": "about-page",
+			"name": "About",
+            "path": "about",
+            "to": "about",
+            "componentFile" : "./pages/About"
         }
 	]
 }
