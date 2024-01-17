@@ -1,6 +1,7 @@
 import "include/style/App.css";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
+import { AuthProvider } from "include/components/useAuth";
 import { AppRouter } from "include/components/AppRoutes";
 
 // Add fontawesome fas to the library
@@ -14,5 +15,9 @@ library.add(fas);
  */
 export default function App()
 {
-    return (<AppRouter />);
+    return (
+        <AuthProvider>
+            <AppRouter />
+        </AuthProvider>
+    );
 }

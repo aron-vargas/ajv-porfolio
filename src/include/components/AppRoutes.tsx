@@ -1,25 +1,27 @@
 import { RouteObject, createBrowserRouter, RouterProvider, Link, Outlet, useLocation, useRouteError } from "react-router-dom";
 import { FontAwesomeIcon as FAI } from '@fortawesome/react-fontawesome'
 import Config from "../config.json";
-import NavBar, { NavItemType } from "include/components/Navbar";
+import Welcome from "include/components/pages/Welcome";
+import Register from "include/components/pages/Register";
+import ThreeBar from "include/components/Navbar";
 import Footer from "include/components/Footer";
-
-const ConfigText = JSON.stringify(Config);
 
 /**
  * This defines the custom type
  * This is used to dynamically create Routes
  */
 export interface MyApplication {
-    id: string,
-	name: string,
-    to?: string,
-    href?: string,
-    isIndex?: boolean,
-    path?: string,
-    elementName?: string,
-    componentFile?: string,
-    children?: MyApplication[]
+    id: string;
+	name: string;
+    hidden?: boolean;
+    skipRoute?: boolean;
+    to?: string;
+    href?: string;
+    isIndex?: boolean;
+    path?: string;
+    elementName?: string;
+    componentFile?: string;
+    children?: MyApplication[];
 }
 
 /**
@@ -27,8 +29,8 @@ export interface MyApplication {
  * @return <HTML>
  */
 const Maincontent = () => {
-	return (<div className="col-xs-12 col-sm-9 col-md-8 body">
-	    <p>Whats up? Welcome to my Main Content!!</p>
+	return (<div>
+	    <Welcome />
 	</div>);
 }
 
@@ -64,32 +66,24 @@ const RootErrorBoundary = () =>
 const NoMatch = () =>
 {
     let location = useLocation();
-    let NavMenu = JSON.parse(ConfigText) as NavItemType[];
 
-    return (<div>
-        <NavBar menu={NavMenu} />
-        <hr />
-        <div className='main-cont'>
-            <div className='nomatch' >
-                <div className='msg'>
-                    <h2>
-                        <FAI icon='triangle-exclamation' color='orange'/>
-                        There seems to be a glitch in the matrix...
-                    </h2>
-                    <div className='note sm-txt'>
-                        <div>Unable to find the path you requested.</div>
-                        <div>You can go <Link to="/">Back to Home</Link> or</div>
-                        <div>try looking at our <Link to="/help">Help Center</Link> if you need a hand.</div>
-                    </div>
-                    <div className='xs-txt'>
-                        Location: {location.pathname}
-                    </div>
+    return (
+        <div className='nomatch' >
+            <div className='msg'>
+                <h2>
+                    <FAI icon='triangle-exclamation' color='orange'/>
+                    There seems to be a glitch in the matrix...
+                </h2>
+                <div className='note sm-txt'>
+                    <div>Unable to find the path you requested.</div>
+                    <div>You can go <Link to="/">Back to Home</Link> or</div>
+                    <div>try looking at our <Link to="/help">Help Center</Link> if you need a hand.</div>
+                </div>
+                <div className='xs-txt'>
+                    Location: {location.pathname}
                 </div>
             </div>
         </div>
-        <hr />
-        <Footer />
-    </div>
     );
 }
 
@@ -100,19 +94,20 @@ const NoMatch = () =>
  */
 const DefaultLayout = () =>
 {
-    let NavMenu = JSON.parse(ConfigText);
+    // Need to create a deep copy here, we dont want to alter the Config
+    let NavMenu = [...Config.applications];
     console.log("We should have a fresh copy of the Config");
-    console.log(NavMenu.applications);
+    console.log(NavMenu);
 
     //const LeftMenu = [];
 
     return (<div>
-        <NavBar menu={NavMenu.applications} />
-        <hr />
+        <div className='container-fluid bg-light'>
+           <ThreeBar menu={NavMenu} />
+        </div>
         <div className='main-cont'>
             <Outlet />
         </div>
-        <hr />
         <Footer />
     </div>);
 }
@@ -121,10 +116,14 @@ const DefaultLayout = () =>
  * Convert an MyApplication to a RouteObject
  *
  * @param routeObj <MyApplication>
- * @returns RouteObject
+ * @returns RouteObject | NULL
  */
 export const AddRoute = (appObj: MyApplication) =>
 {
+    // Skip hidden applications
+    if (appObj.hidden || appObj.skipRoute)
+        return null;
+
     let appRoute: RouteObject = appObj;
     appRoute.errorElement = <RootErrorBoundary />;
 
@@ -153,17 +152,28 @@ export const AddRoute = (appObj: MyApplication) =>
             const ElemName = compMap[appObj.elementName];
             const elem = <ElemName key={appObj.id} />;
             appRoute.element = elem;
+
+            console.log("Logging Route with element defined");
+            console.log(appRoute);
         }
         else if (appObj.componentFile)
         {
             var filePath = appObj.componentFile;
             appRoute.lazy = () => import(`${filePath}`)
+
+            console.log("Logging lazy Route");
+            console.log(appRoute);
+        }
+        else
+        {
+            console.log("AppObj does not have route information");
+            console.log(appRoute);
         }
     }
 
     // Add any children the same way
     if (appObj.children)
-        appRoute.children = ApplicationRoutes(appObj.children);
+       appRoute.children = ApplicationRoutes(appObj.children);
 
     return appRoute;
 }
@@ -176,12 +186,7 @@ export const AddRoute = (appObj: MyApplication) =>
  */
 export function ApplicationRoutes(apps: MyApplication[]): RouteObject[]
 {
-    let myRoutes = apps.map ((appObj) => {
-        var route = AddRoute(appObj);
-        return route;
-    });
-
-    return myRoutes;
+    return apps.filter(AddRoute);
 }
 
 /**
@@ -191,10 +196,27 @@ export function ApplicationRoutes(apps: MyApplication[]): RouteObject[]
  */
 export const AppRouter = () =>
 {
-    // Parse the config to get application list
-    // Use the application list to build browser router
-    let myApps = Config.applications as MyApplication[];
+    // Use the Config application list to build browser router
+    // Need to create a deep copy here, we dont want to alter the Config
+    let myApps = [...Config.applications];
     let childRoutes = ApplicationRoutes(myApps);
+
+    // Add an index and splat/catchall to the end
+    childRoutes.push({
+        id: "index-route",
+        index: true,
+        element: <Maincontent />
+    },
+    {
+        id: "register-route",
+        path: "register",
+        element: <Register />
+    },
+    {
+        id: "no-match",
+        path: "*",
+        element: <NoMatch />
+    });
 
     // Create an array of Route objects used to create the browser router
     // Need a base route to define the default layout
@@ -203,10 +225,6 @@ export const AppRouter = () =>
             path: "/",
             element: <DefaultLayout />,
             children: childRoutes
-        },
-        {
-            path: "*",
-            element: <NoMatch />,
         }
     ];
 

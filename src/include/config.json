@@ -3,45 +3,10 @@
 	"theme": "default",
 	"applications" :
 	[
-		{
-			"id": "home-page",
-			"name": "Home",
-            "path": "/home",
-            "to": "/home",
-            "children": [
-                {
-                    "id": "index-page",
-                    "name": "Welcome",
-                    "href": "/home",
-                    "isIndex": true,
-                    "elementName": "main"
-                },
-                {
-                    "id": "junk-page",
-                    "name": "Junk",
-                    "to": "/home/junk",
-                    "path": "junk",
-                    "elementName": "main"
-                },
-                {
-                    "id": "general",
-                    "name": "General",
-                    "path": "general",
-                    "to": "/home/general",
-                    "elementName": "main"
-                },
-                {
-                    "id": "home-calendar",
-                    "name": "Calendar",
-                    "path": "calendar",
-                    "to": "/home/calendar",
-                    "componentFile" : "./pages/Calendar"
-                }
-            ]
-        },
         {
 			"id": "buy-page",
 			"name": "Buy",
+            "side": "left",
             "path": "/buy",
             "to": "/buy",
             "componentFile" : "./pages/Buy"
@@ -49,6 +14,7 @@
         {
 			"id": "sell-page",
 			"name": "Sell",
+            "side": "left",
             "path": "/sell",
             "to": "/sell",
             "componentFile" : "./pages/Sell"
@@ -56,13 +22,39 @@
         {
 			"id": "rent-page",
 			"name": "Rent",
+            "side": "left",
             "path": "rent",
             "to": "rent",
             "componentFile" : "./pages/Rent"
         },
         {
+			"id": "agent-page",
+			"name": "Find an Agent",
+            "side": "left",
+            "path": "agent",
+            "to": "agent",
+            "componentFile" : "./pages/FindAgent"
+        },
+        {
+			"id": "rental-page",
+			"name": "Manage Rentals",
+            "side": "right",
+            "path": "rent",
+            "to": "rent",
+            "componentFile" : "./pages/Rent"
+        },
+        {
+            "id": "comunity-calendar",
+            "name": "Local Events",
+            "side": "right",
+            "path": "calendar",
+            "to": "calendar",
+            "componentFile" : "./pages/Calendar"
+        },
+        {
 			"id": "about-page",
-			"name": "About",
+			"name": "About Us",
+            "side": "right",
             "path": "about",
             "to": "about",
             "componentFile" : "./pages/About"
