@@ -1,0 +1,49 @@
+.bg-container
+{
+    display: block;
+    background-color: azure;
+    background-image: url("./images/user-banner1920x249.png");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    overflow: hidden;
+}
+
+.user-bio
+{
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+.profile-container
+{
+    display: block;
+    margin: 100px;
+    padding: 50px;
+    border: 2px solid #cccccc;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.profile-img-container
+{
+    border: 2px solid #cccccc;
+    border-radius: 5px;
+    margin: 0 10px 10px 0;
+    text-align: center;
+    min-height: 300px;
+}
+
+.profile-img-container img
+{
+    width: 100%;
+    padding: 10px;
+}
+
+.social-media-links a, .social-media-links span
+{
+    margin-right: 1em;
+    color: #222;
+}

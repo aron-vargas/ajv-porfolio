@@ -12,7 +12,7 @@ export const IDXSearchbar = () => {
     return (
         <div className='container'>
             <div className="dark-overlay p-5 my-5 shadow ">
-                <h1 className='text-light'>Find your dream home</h1>
+                <h1 className='text-dark'>Find your dream home</h1>
                 <form className='mb-1' action="/idx/search/homes-for-sale/any" method="get">
                     <div className="input-group input-group-lg">
                         <input className='form-control' id='search' name='search' type='text' placeholder='Type a city, neighborhood, zip, address, or listing #' />
@@ -21,7 +21,7 @@ export const IDXSearchbar = () => {
 
                     <div className="row mt-2">
                         <div className='col'><button type="button" className="btn btn-primary btn-lg form-control">Price</button></div>
-                        <div className='col'><button type="button" className="btn btn-primary btn-lg form-control">Beds</button></div>
+                        <div className='col'><button type="button" className="btn btn-elegant btn-lg form-control">Beds</button></div>
                         <div className='col'><button type="button" className="btn btn-primary btn-lg form-control">Baths</button></div>
                     </div>
                 </form>

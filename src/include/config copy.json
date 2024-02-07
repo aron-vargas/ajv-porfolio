@@ -7,49 +7,57 @@
 			"id": "home",
 			"name": "Welcome",
             "side": "left",
-            "to": "/"
+            "path": "/",
+            "to": "/",
+            "componentFile" : "@/views/Welcome"
         },
         {
 			"id": "buy-page",
 			"name": "Buy",
             "side": "left",
-            "to": "/buy"
+            "path": "/buy",
+            "to": "/buy",
+            "componentFile" : "@/views/Buy"
         },
         {
 			"id": "sell-page",
 			"name": "Sell",
             "side": "left",
-            "to": "/sell"
+            "path": "/sell",
+            "to": "/sell",
+            "componentFile" : "@/views/Sell"
         },
         {
 			"id": "rent-page",
 			"name": "Rent",
             "side": "left",
-            "to": "rent"
-        },
-        {
-			"id": "agent-page",
-			"name": "Find an Agent",
-            "side": "left",
-            "to": "agent"
+            "path": "rent",
+            "to": "rent",
+            "componentFile" : "@/views/Rent"
         },
         {
 			"id": "rental-page",
 			"name": "Manage Rentals",
             "side": "right",
-            "to": "rent"
+            "path": "rent-page",
+            "to": "rent-page",
+            "componentFile" : "@/views/Rent"
         },
         {
             "id": "comunity-calendar",
             "name": "Local Events",
             "side": "right",
-            "to": "calendar"
+            "path": "calendar",
+            "to": "calendar",
+            "componentFile" : "@/views/Calendar"
         },
         {
 			"id": "about-page",
 			"name": "About Us",
             "side": "right",
-            "to": "about"
+            "path": "about",
+            "to": "about",
+            "componentFile" : "include/views/About"
         }
 	],
     "api_base_url" : "http://localhost:4000",

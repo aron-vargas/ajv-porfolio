@@ -2,11 +2,6 @@ body
 {
   margin: 0;
   padding: 0;
-  background-color: white;
-  color: black;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -27,21 +22,6 @@ code
   height: 50px;
 }
 
-.navbar-nav
-{
-    justify-content: center;
-    font-size: 16px;
-}
-
-.navbar-nav .nav-link
-{
-    font-size: 12pt;
-}
-.nav-buttonz
-{
-	text-align: right !important;
-	margin-right: 20px;
-}
 .footer-logo
 {
 	height: 60px;
@@ -66,10 +46,6 @@ a:hover
   text-decoration: underline
 }
 
-.text-right { text-align: right !important; }
-.text-center { text-align: center !important; }
-.text-left { text-align: left !important; }
-
 .neighbor-bg
 {
     display: block;
@@ -87,8 +63,8 @@ a:hover
     display: inline-block;
     font-family: 'Open Sans',Arial,Helvetica,sans-serif;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
-    border: 1px solid #000;
+    background-color: rgba(250, 250, 250, 0.85);
+    border: 1px solid #FFF;
     border-radius: 5px;
 }
 
@@ -149,6 +125,23 @@ a:hover
     border-bottom: 3px solid #2a5ece;
 }
 
+.modal-body pre
+{
+    white-space: pre-wrap;
+    overflow: auto;
+}
+
+.msg-detail
+{
+    white-space: pre-wrap;
+    overflow: auto;
+    font-family: var(--bs-font-monospace);
+    font-size: smaller;
+    border: 1px solid #000;
+    border-radius: 2px;
+    padding: 2px;
+}
+
 .flat
 {
     border: 0;
@@ -182,6 +175,31 @@ a:hover
     border: 2px solid #AAA;
     border-radius: 10px;
     background-color: white;
+}
+
+.img-border
+{
+    border: 2px solid #cccccc;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+}
+
+[contenteditable="true"]
+{
+    padding: 1rem;
+}
+
+[contenteditable="true"]:hover
+{
+    background: #f7f7f7;
+}
+
+[contenteditable="true"]:focus
+{
+    background: #fcf8e1;
+    outline: 2px solid #3d79fa;
+    border-radius: 3px;
 }
 
 .footer

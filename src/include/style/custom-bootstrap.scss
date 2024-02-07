@@ -1,0 +1,151 @@
+// See https://getbootstrap.com/docs/3.4/customize/
+// To compile
+// > NVPrime\src\include\style> sass .\freedom.scss bootstrap.css
+//
+// Include the new css in index.tsx:
+// import "bootstrap/dist/css/bootstrap.css";
+//
+// Custom.scss
+// Option A: Include all of Bootstrap
+:root {
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+body
+{
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Include any default variable overrides here (though functions won't be available)
+//$body-bg: #000;
+//$body-color: #111;
+
+.navbar-nav
+{
+    justify-content: center;
+    font-size: 16px;
+}
+
+.navbar-nav .nav-link
+{
+    font-size: 12pt;
+}
+
+// Required
+//@import "../../../node_modules/bootstrap/scss/bootstrap";
+//@import "../../../node_modules/bootstrap/scss/_functions";
+//@import "../../../node_modules/bootstrap/scss/_variables";
+//@import "../../../node_modules/bootstrap/scss/_variables-dark";
+
+// Required
+//@import "../../../node_modules/bootstrap/scss/bootstrap";
+@import "../../../node_modules/bootstrap/scss/_functions";
+@import "../../../node_modules/bootstrap/scss/_variables";
+@import "../../../node_modules/bootstrap/scss/_variables-dark";
+
+// Add a custom color to $theme-colors
+$elegant-colors: (
+  "elegant-color": #712cf9
+);
+
+$theme-colors: map-merge($theme-colors, $elegant-colors);
+
+
+@import "../../../node_modules/bootstrap/scss/_maps";
+@import "../../../node_modules/bootstrap/scss/_mixins";
+@import "../../../node_modules/bootstrap/scss/_utilities";
+
+// Add a elegant color to new theme maps
+
+// Light mode
+$elegant-colors-text: ("elegant-color": #712cf9);
+$elegant-colors-bg-subtle: ("elegant-color": #e1d2fe);
+$elegant-colors-border-subtle: ("elegant-color": #bfa1fc);
+
+$theme-colors-text: map-merge($theme-colors-text, $elegant-colors-text);
+$theme-colors-bg-subtle: map-merge($theme-colors-bg-subtle, $elegant-colors-bg-subtle);
+$theme-colors-border-subtle: map-merge($theme-colors-border-subtle, $elegant-colors-border-subtle);
+
+// Dark mode
+$elegant-colors-text-dark: ("elegant-color": #e1d2f2);
+$elegant-colors-bg-subtle-dark: ("elegant-color": #8951fa);
+$elegant-colors-border-subtle-dark: ("elegant-color": #e1d2f2);
+
+$theme-colors-text-dark: map-merge($theme-colors-text-dark, $elegant-colors-text-dark);
+$theme-colors-bg-subtle-dark: map-merge($theme-colors-bg-subtle-dark, $elegant-colors-bg-subtle-dark);
+$theme-colors-border-subtle-dark: map-merge($theme-colors-border-subtle-dark, $elegant-colors-border-subtle-dark);
+
+
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+// scss-docs-start navbar-dark-variables
+$navbar-elegant-color:                 rgba($white, .55) !default;
+$navbar-elegant-hover-color:           rgba($white, .75) !default;
+$navbar-elegant-active-color:          $white !default;
+$navbar-elegant-disabled-color:        rgba($white, .25) !default;
+$navbar-elegant-icon-color:            $navbar-elegant-color !default;
+$navbar-elegant-toggler-icon-bg:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-elegant-icon-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
+$navbar-elegant-toggler-border-color:  rgba($white, .1) !default;
+$navbar-elegant-brand-color:           $navbar-elegant-active-color !default;
+$navbar-elegant-brand-hover-color:     $navbar-elegant-active-color !default;
+
+.navbar-elegant
+{
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 20px;
+    border-top: 2px solid #ce4b7d;
+    border-bottom: 2px solid #ce4b7d;
+}
+
+.navbar-elegant, .navbar[data-bs-theme="elegant"]
+{
+    // scss-docs-start navbar-elegant-css-vars
+    --#{$prefix}navbar-color: #{$navbar-elegant-color};
+    --#{$prefix}navbar-hover-color: #{$navbar-elegant-hover-color};
+    --#{$prefix}navbar-disabled-color: #{$navbar-elegant-disabled-color};
+    --#{$prefix}navbar-active-color: #{$navbar-elegant-active-color};
+    --#{$prefix}navbar-brand-color: #{$navbar-elegant-brand-color};
+    --#{$prefix}navbar-brand-hover-color: #{$navbar-elegant-brand-hover-color};
+    --#{$prefix}navbar-toggler-border-color: #{$navbar-elegant-toggler-border-color};
+    --#{$prefix}navbar-toggler-icon-bg: #{escape-svg($navbar-elegant-toggler-icon-bg)};
+    // scss-docs-end navbar-elegant-css-vars
+}
+
+@include color-mode(elegant)
+{
+    .navbar-toggler-icon
+    {
+      --#{$prefix}navbar-toggler-icon-bg: #{escape-svg($navbar-elegant-toggler-icon-bg)};
+    }
+}
+
+.navbar-elegant .navbar-nav .navbar-brand
+{
+    font-size: 10pt;
+    padding: 2px 10px;
+}
+.navbar-elegant .navbar-nav .nav-item
+{
+    font-size: 10pt;
+}
+
+.navbar-elegant .navbar-nav .nav-link
+{
+    padding: 2px 10px;
+    border-left: 1px solid #AAA;
+    border-right: 1px solid #AAA;
+}
+
+.table th
+{
+    background-color: $gray-400;
+    color: $black;
+}
+
+.btn-elegant {
+  @include button-variant(#05247a, #689dc9, #91c1ff);
+}
